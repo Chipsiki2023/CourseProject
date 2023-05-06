@@ -1,0 +1,4 @@
+obj/main.o
+obj/playlib/play.o
+obj/playlib/libplaylib.a
+bin/exe
