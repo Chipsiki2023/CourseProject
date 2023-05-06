@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
+#include <string.h>
 
 #define SCREEN_LINES 50
 
@@ -18,7 +18,7 @@ void clearScreen();
 
 void askPlayersNames(char* p1, char* p2);
 int mainCycle(char* p1, char* p2);
-void showWinner(int winner);
+void showWinner(int winner, char* name);
 
 void startGame();
 

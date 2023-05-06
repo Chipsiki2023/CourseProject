@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "play.h"
+#include "playlib/play.h"
 
-#define START '1'
-#define EXIT '2'
+#define START 1
+#define EXIT 2
+
+#define TRUE 1
 
 void showMenu();
 
@@ -12,17 +14,22 @@ int main() {
 	while (TRUE) {
 		showMenu();
 
-		char choice = 0;
+		int choice = 0;
 
-		scanf("Choice: %c\n", &choice);
+		printf("Choice: ");
+		scanf("%d", &choice);
 
 		while (choice != START && choice != EXIT) {
-			printf("Wrong choice!\n");
-			scanf("Choice: %c\n", &choice);
+			printf("Wrong choice!\nChoice: ");
+			scanf("%d", &choice);
 		}
 
 		if (choice == EXIT)
 			break;
+
+		printf("Check 0\n");
+
+		getchar();
 
 		startGame();
 	}
@@ -31,6 +38,8 @@ int main() {
 }
 
 void showMenu() {
+	clearScreen();
+
 	printf("Nim Game!\n");
 	printf("1 - Start\n");
 	printf("2 - Exit\n");
